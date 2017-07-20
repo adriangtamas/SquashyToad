@@ -5,8 +5,8 @@ public class VehicleSpawner : MonoBehaviour {
 
 	public GameObject prefab;
 
-	public float spawnIntervalMin = 2;
-	public float spawnIntervalMax = 10;
+	public float meanTime = 4;
+	public float minTime = 2;
 	float nextSpawnTime = 0;
 
 	// Use this for initialization
@@ -19,7 +19,8 @@ public class VehicleSpawner : MonoBehaviour {
 	if (Time.time > nextSpawnTime)
 		{
 			Spawn();
-			nextSpawnTime = Time.time + Random.Range(spawnIntervalMin, spawnIntervalMax);
+			//nextSpawnTime = Time.time + Random.Range(spawnIntervalMin, spawnIntervalMax);
+			nextSpawnTime = Time.time + minTime - Mathf.Log(Random.value) * meanTime;
 		}
 	}
 
