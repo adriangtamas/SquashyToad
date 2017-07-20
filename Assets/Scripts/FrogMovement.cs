@@ -48,6 +48,8 @@ public class FrogMovement : MonoBehaviour {
 			var unnormalizedJumpDirection = Vector3.RotateTowards(projectedLookDirection, Vector3.up, radiansToRotate, 0);
 			var jumpVector = unnormalizedJumpDirection.normalized * jumpSpeedInCMPS[hopCount]; //Debug.DrawRay(transform.position, jumpVector.normalized, Color.red);
 			GetComponent<Rigidbody>().AddForce(jumpVector, ForceMode.VelocityChange); // acceleration is the worst change - constant velocity
+
+			hopCount++;
 		}
 	}
 }

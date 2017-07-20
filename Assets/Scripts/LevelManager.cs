@@ -22,6 +22,13 @@ public class LevelManager : MonoBehaviour {
 		SceneManager.LoadScene(currentIndex + 1);
 	}
 
+	public void ReloadScene()
+	{
+		//Load Scene
+		int currentIndex = SceneManager.GetActiveScene().buildIndex;
+		SceneManager.LoadScene(currentIndex);
+	}
+
 	public void Quit()
 	{
 		print("Game will quit");
