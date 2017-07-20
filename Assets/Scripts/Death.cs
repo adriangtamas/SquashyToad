@@ -4,6 +4,7 @@ using System.Collections;
 public class Death : MonoBehaviour {
 
 	public GameObject UICanvas;
+	public GameObject Reticule;
 
 	// Use this for initialization
 	void Start () {
@@ -18,5 +19,7 @@ public class Death : MonoBehaviour {
 	public void OnDeath()
 	{
 		UICanvas.SetActive(true);
+		Reticule.SetActive(true);
+		GetComponent<Rigidbody>().isKinematic = true;
 	}
 }
